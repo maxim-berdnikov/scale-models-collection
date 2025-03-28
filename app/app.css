@@ -5,11 +5,80 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-html,
+/* html,
 body {
   @apply bg-white dark:bg-gray-950;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+} */
+
+.App {
+  margin: 0 auto;
+  font-family: sans-serif;
+  text-align: center;
 }
+
+.car-title {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 0.5116640406162465) 0%,
+    rgba(253, 187, 45, 0.3463979341736695) 89%
+  );
+  color: #ffffff;
+}
+
+.settings {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #50d0ff;
+  font-size: 14px;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.button--active {
+  border: 1px solid #ff7f50;
+}
+
+.cars {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background: url("https://images-porsche.imgix.net/-/media/F9D62E45B045496DBC909B1A362B9DA1_4A3B5B18AE2F4CA799D84EF8EBBFCC30_CZ23V20OX0009-911-gt3-rs-driving-side?w=1759&q=85&auto=format")
+    center / cover no-repeat;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.input {
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  outline: none;
+  padding: 5px;
+}
+

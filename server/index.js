@@ -750,7 +750,7 @@ const DB = [
     image: "4.webp"
   }
 ];
-const Stub = "/assets/stub-Cu8DKNcu.jpg";
+const Stub = "/scale-models-collection/assets/stub-Cu8DKNcu.jpg";
 const Welcome = () => {
   console.log(1);
   const [currentType, setCurrentType] = useState("all");
@@ -907,14 +907,14 @@ const route1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   default: home,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-Ks5PdKEw.js", "imports": ["/assets/chunk-GNGMS2XR-Dos2DHKy.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-n9KBXhLx.js", "imports": ["/assets/chunk-GNGMS2XR-Dos2DHKy.js", "/assets/with-props-CmJzUyz8.js"], "css": ["/assets/root-wh8pGmKm.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/home-BZPHDnYC.js", "imports": ["/assets/with-props-CmJzUyz8.js", "/assets/chunk-GNGMS2XR-Dos2DHKy.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/assets/manifest-6fea6605.js", "version": "6fea6605" };
+const serverManifest = { "entry": { "module": "/scale-models-collectionassets/entry.client-Ks5PdKEw.js", "imports": ["/scale-models-collectionassets/chunk-GNGMS2XR-Dos2DHKy.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/scale-models-collectionassets/root-n9KBXhLx.js", "imports": ["/scale-models-collectionassets/chunk-GNGMS2XR-Dos2DHKy.js", "/scale-models-collectionassets/with-props-CmJzUyz8.js"], "css": ["/scale-models-collectionassets/root-wh8pGmKm.css"], "clientActionModule": void 0, "clientLoaderModule": void 0, "hydrateFallbackModule": void 0 }, "routes/home": { "id": "routes/home", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/scale-models-collectionassets/home-CWkaQEB6.js", "imports": ["/scale-models-collectionassets/with-props-CmJzUyz8.js", "/scale-models-collectionassets/chunk-GNGMS2XR-Dos2DHKy.js"], "css": [], "clientActionModule": void 0, "clientLoaderModule": void 0, "hydrateFallbackModule": void 0 } }, "url": "/scale-models-collectionassets/manifest-b7d23613.js", "version": "b7d23613" };
 const assetsBuildDirectory = "build\\client";
 const basename = "/";
 const future = { "unstable_middleware": false, "unstable_optimizeDeps": false, "unstable_splitRouteModules": false, "unstable_viteEnvironmentApi": false };
 const ssr = true;
 const isSpaMode = false;
 const prerender = [];
-const publicPath = "/";
+const publicPath = "/scale-models-collection";
 const entry = { module: entryServer };
 const routes = {
   "root": {

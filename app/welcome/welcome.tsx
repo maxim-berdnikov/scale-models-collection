@@ -75,7 +75,7 @@ export const Welcome = () => {
     <div className="App">
       {currentCar && (
         <img
-          src={`/app/assets/${currentCar}`}
+          src={`app/assets/${currentCar}`}
           className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] max-w-[500px] cursor-crosshair"
           onClick={() => setCurrentCar("")}
         />
@@ -141,7 +141,7 @@ export const Welcome = () => {
                 className="card cursor-pointer"
                 style={{
                   backgroundImage: car.image
-                    ? `url('/app/assets/${car.image}')`
+                    ? `url('app/assets/${car.image}')`
                     : `url('${Stub}')`,
                 }}
                 onClick={() => {

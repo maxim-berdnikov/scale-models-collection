@@ -1,16 +1,17 @@
-// import "../app.css";
 import { DB } from "./DB";
 import React, { useEffect, useState } from "react";
 import Stub from "../assets/stub.jpg";
+import type { Car } from "./types";
 
 export const Welcome = () => {
   console.log(1);
   const [currentType, setCurrentType] = useState("all");
   const [currentOrigin, setCurrentOrigin] = useState("all");
-  const [filteredDB, setFilteredDB] = useState<typeof DB>([]);
-  const [garage, setGarage] = useState<typeof DB>([]);
+  const [filteredDB, setFilteredDB] = useState<Car[]>([]);
+  const [garage, setGarage] = useState<Car[]>([]);
   const [origins, setOrigins] = useState([""]);
   const [inputValue, setInputValue] = useState("");
+  const [currentCar, setCurrentCar] = useState("");
 
   const buttons = [
     {
@@ -41,12 +42,14 @@ export const Welcome = () => {
     setGarage(filteredByOrigin);
   };
 
-  const handleFilterType: React.MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleFilterType: React.MouseEventHandler<HTMLButtonElement> = (
+    event
+  ) => {
     setCurrentType(event.currentTarget.id);
     filterDB(event.currentTarget.id, currentOrigin);
   };
 
-  const handleFilterOrigin: React.MouseEventHandler<HTMLDivElement> = (
+  const handleFilterOrigin: React.MouseEventHandler<HTMLButtonElement> = (
     event
   ) => {
     setCurrentOrigin(event.currentTarget.id);
@@ -70,30 +73,37 @@ export const Welcome = () => {
 
   return (
     <div className="App">
+      {currentCar && (
+        <img
+          src={`/app/assets/${currentCar}`}
+          className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] max-w-[500px] cursor-crosshair"
+          onClick={() => setCurrentCar("")}
+        />
+      )}
       <h1>Hot Wheels Гараж</h1>
       <div className="settings">
         {origins.map((origin) => (
-          <div
+          <button
             key={origin}
             id={origin}
             className={`button ${currentOrigin === origin && "button--active"}`}
             onClick={handleFilterOrigin}
           >
             {origin}
-          </div>
+          </button>
         ))}
-        <div
+        <button
           key="all"
           id="all"
           className={`button ${currentOrigin === "all" && "button--active"}`}
           onClick={handleFilterOrigin}
         >
           Все
-        </div>
+        </button>
       </div>
       <div className="settings">
         {buttons.map((button) => (
-          <div
+          <button
             key={button.type}
             className={`button ${
               currentType === button.type && "button--active"
@@ -102,7 +112,7 @@ export const Welcome = () => {
             onClick={handleFilterType}
           >
             {button.title}
-          </div>
+          </button>
         ))}
       </div>
       <p>Всего: {garage.length}</p>
@@ -128,14 +138,24 @@ export const Welcome = () => {
           (car, index) =>
             car.title && (
               <div
-                className="card"
+                className="card cursor-pointer"
                 style={{
                   backgroundImage: car.image
                     ? `url('/app/assets/${car.image}')`
                     : `url('${Stub}')`,
                 }}
+                onClick={() => {
+                  if (car.image) {
+                    setCurrentCar(car.image);
+                  }
+                }}
+                role="button"
               >
-                <p key={car.title} className="car-title">
+                <p
+                  key={car.title}
+                  className="car-title cursor-text text-sm"
+                  onClick={(event) => event.stopPropagation()}
+                >
                   {index + 1}. {car.series ? `${car.series}: ` : ""}
                   {car.title}
                 </p>

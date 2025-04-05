@@ -1,15 +1,6 @@
-export const DB: {
-  title: string;
-  type: string;
-  scale: string;
-  origin: string;
-  treasureHunt: boolean;
-  series: string;
-  order: string;
-  year: number;
-  mainMaterial: string;
-  image?: string;
-}[] = [
+import type { Car } from "./types";
+
+export const DB: Car[] = [
   {
     title: "Cadet",
     type: "car",
@@ -31,6 +22,7 @@ export const DB: {
     order: "5/5",
     year: 0,
     mainMaterial: "metal",
+    image: "31.jpg",
   },
   {
     title: "Mazda Repu",
@@ -64,6 +56,7 @@ export const DB: {
     order: "2/10",
     year: 2021,
     mainMaterial: "metal",
+    image: "17.jpg",
   },
   {
     title: "'70 Chevy Chevelle",
@@ -75,6 +68,7 @@ export const DB: {
     order: "3/5",
     year: 0,
     mainMaterial: "metal",
+    image: "18.jpg",
   },
   {
     title: "'87 Ford Sierra Cosworth",
@@ -108,6 +102,7 @@ export const DB: {
     order: "5/10",
     year: 2019,
     mainMaterial: "metal",
+    image: "35.jpg",
   },
   {
     title: "Mod Rod",
@@ -119,6 +114,7 @@ export const DB: {
     order: "5/10",
     year: 2019,
     mainMaterial: "metal",
+    image: "32.jpg",
   },
   {
     title: "Circle Tracker",
@@ -130,6 +126,7 @@ export const DB: {
     order: "6/10",
     year: 2019,
     mainMaterial: "metal",
+    image: "36.jpg",
   },
   {
     title: "Snoopi",
@@ -141,6 +138,7 @@ export const DB: {
     order: "5/10",
     year: 2018,
     mainMaterial: "metal",
+    image: "19.webp",
   },
   {
     title: "Paty Wagon (TMNT)",
@@ -152,6 +150,7 @@ export const DB: {
     order: "3/10",
     year: 2020,
     mainMaterial: "metal",
+    image: "20.jpg",
   },
   {
     title: "'52 Hudson Hornet (Purple)",
@@ -163,6 +162,7 @@ export const DB: {
     order: "4/10",
     year: 2020,
     mainMaterial: "metal",
+    image: "21.jpg",
   },
   {
     title: "'73 Ford Falcon XB (Green)",
@@ -174,6 +174,19 @@ export const DB: {
     order: "7/10",
     year: 2020,
     mainMaterial: "metal",
+    image: "22.jpg",
+  },
+  {
+    title: "'71 Plymouth GTX",
+    type: "car",
+    scale: "1:64",
+    origin: "Hot Wheels",
+    treasureHunt: false,
+    series: "Muscle Mania",
+    order: "7/10",
+    year: 2023,
+    mainMaterial: "metal",
+    image: "33.webp",
   },
   {
     title: "'55 Chevy Bel Air Gasser (Purple)",
@@ -185,6 +198,7 @@ export const DB: {
     order: "2/5",
     year: 2022,
     mainMaterial: "metal",
+    image: "23.jpg",
   },
   {
     title: "Arkham Asylum Batmobile (Blue)",
@@ -196,6 +210,7 @@ export const DB: {
     order: "5/5",
     year: 2019,
     mainMaterial: "metal",
+    image: "24.jpg",
   },
   {
     title: "Arkham Asylum Batmobile (Green)",
@@ -207,6 +222,7 @@ export const DB: {
     order: "2/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "25.jpg",
   },
   {
     title: "The Batman Batmobile (Blue)",
@@ -218,6 +234,7 @@ export const DB: {
     order: "2/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "26.jpg",
   },
   {
     title: "Batmobile (Chrome)",
@@ -229,6 +246,7 @@ export const DB: {
     order: "3/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "27.jpg",
   },
   {
     title: "Arkham Knight Batmobile (Red)",
@@ -240,6 +258,7 @@ export const DB: {
     order: "1/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "28.jpg",
   },
   {
     title: "Batman 2022 Batmobile",
@@ -251,6 +270,7 @@ export const DB: {
     order: "",
     year: 2022,
     mainMaterial: "metal",
+    image: "29.jpg",
   },
   {
     title: "Batplane (Black)",
@@ -262,6 +282,7 @@ export const DB: {
     order: "1/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "30.jpg",
   },
   {
     title: "'10 Pro Stock Camaro",
@@ -284,6 +305,7 @@ export const DB: {
     order: "5/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "16.jpg",
   },
   {
     title: "Ford Shelby GT350",
@@ -295,6 +317,7 @@ export const DB: {
     order: "4/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "15.webp",
   },
   {
     title: "X-Jet (Blue)",
@@ -306,6 +329,7 @@ export const DB: {
     order: "10/10",
     year: 2021,
     mainMaterial: "metal",
+    image: "14.jpg",
   },
   {
     title: "X-Jet (Black)",
@@ -317,6 +341,7 @@ export const DB: {
     order: "4/40",
     year: 2021,
     mainMaterial: "metal",
+    image: "13.jpg",
   },
   {
     title: "Tricera-Truck (Teal)",
@@ -328,6 +353,7 @@ export const DB: {
     order: "3/5",
     year: 2021,
     mainMaterial: "metal",
+    image: "12.jpg",
   },
   {
     title: "Volkswagen Beetle (Green)",
@@ -339,6 +365,7 @@ export const DB: {
     order: "2/5",
     year: 2022,
     mainMaterial: "metal",
+    image: "11.jpg",
   },
   {
     title: "'55 Chevy (Red)",
@@ -350,6 +377,7 @@ export const DB: {
     order: "1/5",
     year: 2022,
     mainMaterial: "metal",
+    image: "37.jpg",
   },
   {
     title: "TV Series Batmobile",
@@ -383,6 +411,7 @@ export const DB: {
     order: "#9746",
     year: 0,
     mainMaterial: "metal",
+    image: "39.jpg",
   },
   {
     title: "Chrysler Crossfire",
@@ -394,6 +423,7 @@ export const DB: {
     order: "#4046",
     year: 2003,
     mainMaterial: "metal",
+    image: "40.jpg",
   },
   {
     title: "Ford Mustang 1999",
@@ -405,6 +435,7 @@ export const DB: {
     order: "#9753",
     year: 0,
     mainMaterial: "metal",
+    image: "38.webp",
   },
   {
     title: "Roadbeasts McDonald's",
@@ -416,6 +447,7 @@ export const DB: {
     order: "",
     year: 2003,
     mainMaterial: "metal",
+    image: "10.png",
   },
   {
     title: "'17 Acura NSX",
@@ -427,6 +459,7 @@ export const DB: {
     order: "2/5",
     year: 2020,
     mainMaterial: "metal",
+    image: "9.webp",
   },
   {
     title: "Pink 5",
@@ -471,6 +504,7 @@ export const DB: {
     order: "1/5",
     year: 2021,
     mainMaterial: "metal",
+    image: "34.jpg",
   },
   {
     title: "McLaren F1 GTR",
@@ -482,6 +516,7 @@ export const DB: {
     order: "3/10",
     year: 2021,
     mainMaterial: "metal",
+    image: "8.webp",
   },
   {
     title: "'57 Chevy",
@@ -515,6 +550,7 @@ export const DB: {
     order: "5/10",
     year: 2021,
     mainMaterial: "metal",
+    image: "7.webp",
   },
   {
     title: "'32 Ford",
@@ -526,6 +562,7 @@ export const DB: {
     order: "2/10",
     year: 2021,
     mainMaterial: "metal",
+    image: "6.jpg",
   },
   {
     title: "'83 Chevy Silverado",
@@ -549,6 +586,7 @@ export const DB: {
     order: "",
     year: 2025,
     mainMaterial: "metal",
+    image: "5.webp",
   },
   {
     title: "'57 GMC Stepside",
@@ -561,5 +599,29 @@ export const DB: {
     year: 2025,
     mainMaterial: "metal",
     image: "1.jpg",
+  },
+  {
+    title: "'82 Toyota Supra ",
+    type: "car",
+    scale: "1:64",
+    origin: "Hot Wheels",
+    treasureHunt: false,
+    series: "HW: The '80s",
+    order: "10/10",
+    year: 2024,
+    mainMaterial: "metal",
+    image: "3.webp",
+  },
+  {
+    title: "1978 Dodge Li'l Red Express Truck",
+    type: "car",
+    scale: "1:64",
+    origin: "Hot Wheels",
+    treasureHunt: false,
+    series: "",
+    order: "",
+    year: 2024,
+    mainMaterial: "metal",
+    image: "4.webp",
   },
 ];

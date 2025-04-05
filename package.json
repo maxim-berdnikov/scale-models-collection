@@ -2,9 +2,10 @@
   "name": "scale-models-collection",
   "private": true,
   "type": "module",
+  "homepage": "https://maxim-berdnikov.github.io/scale-models-collection/",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
+    "build": "vite build",
+    "dev": "vite",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "predeploy": "npm run build",
@@ -28,7 +29,8 @@
     "react-router-devtools": "^1.1.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11",
+    "vite": "^5.4.17",
+    "vite-plugin-singlefile": "^2.2.0",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }

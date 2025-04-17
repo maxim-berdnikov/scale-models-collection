@@ -2,9 +2,24 @@ import { DB } from "./DB";
 import React, { useEffect, useState } from "react";
 import Stub from "../assets/stub.jpg";
 import type { Car } from "./types";
+import { Preview } from "./Preview";
 
-export const Welcome = () => {
-  console.log(1);
+const BUTTONS = [
+  {
+    type: "car",
+    title: "Машины",
+  },
+  {
+    type: "plane",
+    title: "Самолеты",
+  },
+  {
+    type: "all",
+    title: "Все",
+  },
+];
+
+export const MainPage = () => {
   const [currentType, setCurrentType] = useState("all");
   const [currentOrigin, setCurrentOrigin] = useState("all");
   const [filteredDB, setFilteredDB] = useState<Car[]>([]);
@@ -12,21 +27,6 @@ export const Welcome = () => {
   const [origins, setOrigins] = useState([""]);
   const [inputValue, setInputValue] = useState("");
   const [currentCar, setCurrentCar] = useState("");
-
-  const buttons = [
-    {
-      type: "car",
-      title: "Машины",
-    },
-    {
-      type: "plane",
-      title: "Самолеты",
-    },
-    {
-      type: "all",
-      title: "Все",
-    },
-  ];
 
   const filterDB = (type: string, origin: string) => {
     const filteredByType =
@@ -73,13 +73,7 @@ export const Welcome = () => {
 
   return (
     <div className="App">
-      {currentCar && (
-        <img
-          src={`app/assets/${currentCar}`}
-          className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] max-w-[500px] cursor-crosshair"
-          onClick={() => setCurrentCar("")}
-        />
-      )}
+      <Preview currentCar={currentCar} setCurrentCar={setCurrentCar} />
       <h1>Hot Wheels Гараж</h1>
       <div className="settings">
         {origins.map((origin) => (
@@ -102,7 +96,7 @@ export const Welcome = () => {
         </button>
       </div>
       <div className="settings">
-        {buttons.map((button) => (
+        {BUTTONS.map((button) => (
           <button
             key={button.type}
             className={`button ${
@@ -141,7 +135,7 @@ export const Welcome = () => {
                 className="card cursor-pointer"
                 style={{
                   backgroundImage: car.image
-                    ? `url('app/assets/${car.image}')`
+                    ? `url('assets/${car.image}')`
                     : `url('${Stub}')`,
                 }}
                 onClick={() => {

@@ -11,6 +11,7 @@ export const DB: Car[] = [
     order: "",
     year: 0,
     mainMaterial: "metal",
+    image: "48.jpg",
   },
   {
     title: "Batman: The Animated Series",
@@ -117,6 +118,7 @@ export const DB: Car[] = [
     order: "2/10",
     year: 2022,
     mainMaterial: "metal",
+    image: "47.jpg",
   },
   {
     title: "'49 Ford F1",
@@ -589,7 +591,7 @@ export const DB: Car[] = [
     order: "5/10",
     year: 2021,
     mainMaterial: "metal",
-    image: "7.webp",
+    image: "7.jpg",
   },
   {
     title: "'32 Ford",

@@ -75,12 +75,14 @@ export const MainPage = () => {
     <div className="App">
       <Preview currentCar={currentCar} setCurrentCar={setCurrentCar} />
       <h1>Hot Wheels Гараж</h1>
-      <div className="settings">
+      <div className="mb-[10px] flex justify-center gap-[10px] flex-wrap">
         {origins.map((origin) => (
           <button
             key={origin}
             id={origin}
-            className={`button ${currentOrigin === origin && "button--active"}`}
+            className={`button ${
+              currentOrigin === origin && "button--active"
+            } shrink-0`}
             onClick={handleFilterOrigin}
           >
             {origin}
@@ -89,17 +91,19 @@ export const MainPage = () => {
         <button
           key="all"
           id="all"
-          className={`button ${currentOrigin === "all" && "button--active"}`}
+          className={`button ${
+            currentOrigin === "all" && "button--active"
+          } shrink-0`}
           onClick={handleFilterOrigin}
         >
           Все
         </button>
       </div>
-      <div className="settings">
+      <div className="mb-[10px] flex justify-center gap-[10px] flex-wrap">
         {BUTTONS.map((button) => (
           <button
             key={button.type}
-            className={`button ${
+            className={`button button--type ${
               currentType === button.type && "button--active"
             }`}
             id={button.type}

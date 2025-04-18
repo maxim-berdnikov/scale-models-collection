@@ -33,19 +33,14 @@ body {
   color: #ffffff;
 }
 
-.settings {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+
 
 .button {
   width: 100px;
   height: 25px;
   border-radius: 5px;
   border: none;
-  background-color: #50d0ff;
+  background-color: #50ff93;
   font-size: 14px;
   line-height: 25px;
   cursor: pointer;
@@ -55,6 +50,9 @@ body {
   border: 1px solid #ff7f50;
 }
 
+.button--type {
+  background-color: #50d0ff;
+}
 .cars {
   display: flex;
   justify-content: center;

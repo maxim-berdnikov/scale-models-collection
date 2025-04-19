@@ -107,6 +107,7 @@ export const DB: Model[] = [
     order: "1/10",
     year: 2022,
     mainMaterial: "metal",
+    image: "57.jpg",
   },
   {
     title: "'84 Mustang SVO",
@@ -334,6 +335,7 @@ export const DB: Model[] = [
     order: "5/10",
     year: 2018,
     mainMaterial: "metal",
+    image: "56.jpg",
   },
   {
     title: "Porsche 934 Turbo RSR",
@@ -581,6 +583,7 @@ export const DB: Model[] = [
     order: "4/5",
     year: 2021,
     mainMaterial: "metal",
+    image: "55.jpg",
   },
   {
     title: "Nissan Skyline GT-R (R32)",

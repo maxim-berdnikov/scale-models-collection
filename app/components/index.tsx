@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Stub from "../assets/stub.jpg";
 import type { Car } from "./types";
 import { Preview } from "./Preview";
+import classNames from "classnames";
 
 const BUTTONS = [
   {
@@ -54,6 +55,16 @@ export const MainPage = () => {
   ) => {
     setCurrentOrigin(event.currentTarget.id);
     filterDB(currentType, event.currentTarget.id);
+  };
+
+  const handleModelClick = (
+    event: React.MouseEvent,
+    carImage: string | undefined
+  ) => {
+    if (carImage) {
+      event.stopPropagation();
+      setCurrentCar(carImage === currentCar ? "" : carImage);
+    }
   };
 
   useEffect(() => {
@@ -131,7 +142,7 @@ export const MainPage = () => {
         }}
         className="input"
       />
-      <div className="cars">
+      <div className={"cars"}>
         {garage.map(
           (car, index) =>
             car.title && (
@@ -142,11 +153,7 @@ export const MainPage = () => {
                     ? `url('assets/${car.image}')`
                     : `url('${Stub}')`,
                 }}
-                onClick={() => {
-                  if (car.image) {
-                    setCurrentCar(car.image);
-                  }
-                }}
+                onClick={(event) => handleModelClick(event, car.image)}
                 role="button"
               >
                 <p

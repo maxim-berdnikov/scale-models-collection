@@ -2,22 +2,22 @@ import React from "react";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
 type PreviewProps = {
-  currentCar: string;
-  setCurrentCar: React.Dispatch<React.SetStateAction<string>>;
+  currentModel: string;
+  setCurrentModel: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const Preview: React.FC<PreviewProps> = ({
-  currentCar,
-  setCurrentCar,
+  currentModel,
+  setCurrentModel,
 }) => {
   const handlePreviewClose = () => {
-    setCurrentCar("");
+    setCurrentModel("");
     document.body.classList.remove("overflow-y-hidden");
   };
 
   const ref = useOutsideClick<HTMLImageElement>(handlePreviewClose);
 
-  if (!currentCar) {
+  if (!currentModel) {
     return null;
   }
 
@@ -27,7 +27,7 @@ export const Preview: React.FC<PreviewProps> = ({
       onClick={handlePreviewClose}
       ref={ref}
     >
-      <img src={`assets/${currentCar}`} />
+      <img src={`assets/${currentModel}`} />
     </div>
   );
 };

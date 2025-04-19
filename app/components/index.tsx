@@ -1,44 +1,29 @@
 import { DB } from "./DB";
 import React, { useEffect, useState } from "react";
-import Stub from "../assets/stub.jpg";
-import type { Car } from "./types";
+import type { Model } from "./types";
 import { Preview } from "./Preview";
-import classNames from "classnames";
-
-const BUTTONS = [
-  {
-    type: "car",
-    title: "Машины",
-  },
-  {
-    type: "plane",
-    title: "Самолеты",
-  },
-  {
-    type: "all",
-    title: "Все",
-  },
-];
+import { Modeltem } from "./Modeltem";
+import { BUTTONS } from "./const";
 
 export const MainPage = () => {
   const [currentType, setCurrentType] = useState("all");
   const [currentOrigin, setCurrentOrigin] = useState("all");
-  const [filteredDB, setFilteredDB] = useState<Car[]>([]);
-  const [garage, setGarage] = useState<Car[]>([]);
+  const [filteredDB, setFilteredDB] = useState<Model[]>([]);
+  const [garage, setGarage] = useState<Model[]>([]);
   const [origins, setOrigins] = useState([""]);
   const [inputValue, setInputValue] = useState("");
-  const [currentCar, setCurrentCar] = useState("");
+  const [currentModel, setCurrentModel] = useState("");
 
   const filterDB = (type: string, origin: string) => {
     const filteredByType =
       type === "all"
         ? filteredDB
-        : filteredDB.filter((car) => car.type === type);
+        : filteredDB.filter((model) => model.type === type);
 
     const filteredByOrigin =
       origin === "all"
         ? filteredByType
-        : filteredByType.filter((car) => car.origin === origin);
+        : filteredByType.filter((model) => model.origin === origin);
 
     setGarage(filteredByOrigin);
   };
@@ -59,16 +44,16 @@ export const MainPage = () => {
 
   const handleModelClick = (
     event: React.MouseEvent,
-    carImage: string | undefined
+    modelImage: string | undefined
   ) => {
-    if (carImage) {
+    if (modelImage) {
       event.stopPropagation();
-      setCurrentCar(carImage === currentCar ? "" : carImage);
+      setCurrentModel(modelImage === currentModel ? "" : modelImage);
     }
   };
 
   useEffect(() => {
-    const newDB = DB.filter((car) => car.title).sort((a, b) => {
+    const newDB = DB.filter((model) => model.title).sort((a, b) => {
       const titleA = `${a.series}: ${a.title}`;
       const titleB = `${b.series}: ${b.title}`;
 
@@ -77,14 +62,16 @@ export const MainPage = () => {
     setFilteredDB(newDB);
     setGarage(newDB);
 
-    const allOrigins = DB.filter((car) => car.origin).map((car) => car.origin);
+    const allOrigins = DB.filter((model) => model.origin).map(
+      (model) => model.origin
+    );
 
     setOrigins([...new Set(allOrigins)]);
   }, []);
 
   return (
     <div className="App">
-      <Preview currentCar={currentCar} setCurrentCar={setCurrentCar} />
+      <Preview currentModel={currentModel} setCurrentModel={setCurrentModel} />
       <h1>Hot Wheels Гараж</h1>
       <div className="mb-[10px] flex justify-center gap-[10px] flex-wrap">
         {origins.map((origin) => (
@@ -142,31 +129,14 @@ export const MainPage = () => {
         }}
         className="input"
       />
-      <div className={"cars"}>
-        {garage.map(
-          (car, index) =>
-            car.title && (
-              <div
-                className="card cursor-pointer"
-                style={{
-                  backgroundImage: car.image
-                    ? `url('assets/${car.image}')`
-                    : `url('${Stub}')`,
-                }}
-                onClick={(event) => handleModelClick(event, car.image)}
-                role="button"
-              >
-                <p
-                  key={car.title}
-                  className="car-title cursor-text text-sm"
-                  onClick={(event) => event.stopPropagation()}
-                >
-                  {index + 1}. {car.series ? `${car.series}: ` : ""}
-                  {car.title}
-                </p>
-              </div>
-            )
-        )}
+      <div className={"models"}>
+        {garage.map((model, index) => (
+          <Modeltem
+            model={model}
+            index={index}
+            handleModelClick={handleModelClick}
+          />
+        ))}
       </div>
     </div>
   );

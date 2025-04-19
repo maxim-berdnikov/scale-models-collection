@@ -20,7 +20,7 @@ body {
   text-align: center;
 }
 
-.car-title {
+.model-title {
   margin: 0;
   padding: 10px;
   text-align: left;
@@ -53,7 +53,7 @@ body {
 .button--type {
   background-color: #50d0ff;
 }
-.cars {
+.models {
   display: flex;
   justify-content: center;
   gap: 10px;

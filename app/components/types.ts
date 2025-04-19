@@ -1,4 +1,4 @@
-export type Car = {
+export type Model = {
   title: string;
   type: string;
   scale: string;

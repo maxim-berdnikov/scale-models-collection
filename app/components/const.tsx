@@ -1,6 +1,6 @@
 export const BUTTONS = [
   {
-    type: "model",
+    type: "car",
     title: "Машины",
   },
   {

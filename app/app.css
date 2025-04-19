@@ -73,9 +73,10 @@ body {
 
 .input {
   margin-bottom: 10px;
-  border-radius: 6px;
+  border-radius: 3px;
   border: 1px solid #000000;
   outline: none;
-  padding: 5px;
+  padding: 0 5px;
+  height: 20px;
 }
 

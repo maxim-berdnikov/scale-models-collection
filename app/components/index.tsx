@@ -4,6 +4,7 @@ import type { Model } from "./types";
 import { Preview } from "./Preview";
 import { Modeltem } from "./Modeltem";
 import { BUTTONS } from "./const";
+import { Origins } from "./Origins";
 
 export const MainPage = () => {
   const [currentType, setCurrentType] = useState("all");
@@ -73,30 +74,11 @@ export const MainPage = () => {
     <div className="App">
       <Preview currentModel={currentModel} setCurrentModel={setCurrentModel} />
       <h1>Hot Wheels Гараж</h1>
-      <div className="mb-[10px] flex justify-center gap-[10px] flex-wrap">
-        {origins.map((origin) => (
-          <button
-            key={origin}
-            id={origin}
-            className={`button ${
-              currentOrigin === origin && "button--active"
-            } shrink-0`}
-            onClick={handleFilterOrigin}
-          >
-            {origin}
-          </button>
-        ))}
-        <button
-          key="all"
-          id="all"
-          className={`button ${
-            currentOrigin === "all" && "button--active"
-          } shrink-0`}
-          onClick={handleFilterOrigin}
-        >
-          Все
-        </button>
-      </div>
+      <Origins
+        origins={origins}
+        currentOrigin={currentOrigin}
+        handleFilterOrigin={handleFilterOrigin}
+      />
       <div className="mb-[10px] flex justify-center gap-[10px] flex-wrap">
         {BUTTONS.map((button) => (
           <button

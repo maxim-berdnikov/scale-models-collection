@@ -80,3 +80,7 @@ body {
   height: 20px;
 }
 
+.origins-container {
+  scrollbar-width: none;
+}
+

@@ -1,4 +1,3 @@
-import React from "react";
 import type { Model } from "./types";
 import Stub from "../assets/stub.jpg";
 

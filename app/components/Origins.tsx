@@ -36,20 +36,21 @@ export const Origins: React.FC<OriginsProps> = ({
   handleFilterOrigin,
 }) => {
   return (
-    <div className="fixed left-0 bottom-2.5 w-full flex justify-center">
-      <div className="origins-container flex justify-start gap-[10px] overflow-x-auto w-[90%] h-[30px]">
-        {origins.map((origin) => (
-          <Button
-            origin={origin}
-            currentOrigin={currentOrigin}
-            handleFilterOrigin={handleFilterOrigin}
-          />
-        ))}
+    <div className="fixed left-0 bottom-2.5 w-full flex justify-center z-1">
+      <div className="origins-container flex justify-start gap-[10px] overflow-x-auto w-fit max-w-[95%] h-[30px]">
         <Button
           origin={"all"}
           currentOrigin={currentOrigin}
           handleFilterOrigin={handleFilterOrigin}
         />
+        {origins.map((origin) => (
+          <Button
+            key={origin}
+            origin={origin}
+            currentOrigin={currentOrigin}
+            handleFilterOrigin={handleFilterOrigin}
+          />
+        ))}
       </div>
     </div>
   );

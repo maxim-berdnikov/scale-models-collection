@@ -14,44 +14,38 @@ body {
   }
 } */
 
-.App {
-  margin: 0 auto;
-  font-family: sans-serif;
-  text-align: center;
-}
 
 .model-title {
-  margin: 0;
-  padding: 10px;
-  text-align: left;
   background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
-    rgba(34, 193, 195, 0.5116640406162465) 0%,
-    rgba(253, 187, 45, 0.3463979341736695) 89%
+    rgba(34, 192, 195, 0.925) 0%,
+    rgba(253, 187, 45, 0.685) 89%
   );
-  color: #ffffff;
 }
 
-
-
 .button {
-  width: 100px;
-  height: 25px;
+  width: fit-content;
+  height: 30px;
   border-radius: 5px;
   border: none;
-  background-color: #50ff93;
   font-size: 14px;
   line-height: 25px;
   cursor: pointer;
+  background-color: #000000cc;
+  color: #b9b9b9;
+  padding: 0 8px;
+  line-height: 30px;
+  border-radius: 15px;
 }
 
 .button--active {
-  border: 1px solid #ff7f50;
+  color: #ffffff;
 }
 
 .button--type {
   background-color: #50d0ff;
+  color: #000000;
 }
 .models {
   display: flex;
@@ -74,7 +68,7 @@ body {
 .input {
   margin-bottom: 10px;
   border-radius: 3px;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   outline: none;
   padding: 0 5px;
   height: 20px;

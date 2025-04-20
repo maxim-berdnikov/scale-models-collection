@@ -23,7 +23,7 @@ export const Preview: React.FC<PreviewProps> = ({
 
   return (
     <div
-      className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] max-w-[500px] cursor-zoom-out width w-[90%] overflow-hidden flex justify-center"
+      className="fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] max-w-[500px] cursor-zoom-out width w-[90%] overflow-hidden flex justify-center z-1"
       onClick={handlePreviewClose}
       ref={ref}
     >

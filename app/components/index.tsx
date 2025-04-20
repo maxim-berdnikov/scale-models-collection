@@ -47,8 +47,9 @@ export const MainPage = () => {
     event: React.MouseEvent,
     modelImage: string | undefined
   ) => {
+    event.stopPropagation();
+
     if (modelImage) {
-      event.stopPropagation();
       setCurrentModel(modelImage === currentModel ? "" : modelImage);
     }
   };
@@ -71,9 +72,9 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="mx-auto my-auto mt-0 mb-0 text-center bg-[#000000cc] text-white">
       <Preview currentModel={currentModel} setCurrentModel={setCurrentModel} />
-      <h1>Hot Wheels Гараж</h1>
+      <h1 className="pb-2.5 text-lg font-bold">Scale Models Collection</h1>
       <Origins
         origins={origins}
         currentOrigin={currentOrigin}
@@ -114,6 +115,7 @@ export const MainPage = () => {
       <div className={"models"}>
         {garage.map((model, index) => (
           <Modeltem
+            key={`${model.series || ""}-${model.title}`}
             model={model}
             index={index}
             handleModelClick={handleModelClick}

@@ -1,6 +1,6 @@
-import type { Model } from "./types";
+import type { Model } from "../types/types";
 
-export const DB: Model[] = [
+export const models: Model[] = [
   {
     title: "Cadet",
     type: "car",

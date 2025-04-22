@@ -1,4 +1,4 @@
-import type { Model } from "./types";
+import type { Model } from "../types/types";
 import Stub from "../assets/stub.jpg";
 import { useEffect, useState } from "react";
 import clsx from "classnames";

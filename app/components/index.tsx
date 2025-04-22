@@ -1,6 +1,6 @@
-import { DB } from "./DB";
+import { models } from "../data/models";
 import React, { useEffect, useState } from "react";
-import type { Model } from "./types";
+import type { Model } from "../types/types";
 import { Preview } from "./Preview";
 import { Modeltem } from "./Modeltem";
 import { BUTTONS } from "./const";
@@ -55,18 +55,20 @@ export const MainPage = () => {
   };
 
   useEffect(() => {
-    const newDB = DB.filter((model) => model.title).sort((a, b) => {
-      const titleA = `${a.series}: ${a.title}`;
-      const titleB = `${b.series}: ${b.title}`;
+    const newDB = models
+      .filter((model) => model.title)
+      .sort((a, b) => {
+        const titleA = `${a.series}: ${a.title}`;
+        const titleB = `${b.series}: ${b.title}`;
 
-      return titleA.localeCompare(titleB);
-    });
+        return titleA.localeCompare(titleB);
+      });
     setFilteredDB(newDB);
     setGarage(newDB);
 
-    const allOrigins = DB.filter((model) => model.origin).map(
-      (model) => model.origin
-    );
+    const allOrigins = models
+      .filter((model) => model.origin)
+      .map((model) => model.origin);
 
     setOrigins([...new Set(allOrigins)]);
   }, []);

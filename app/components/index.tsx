@@ -74,7 +74,7 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="mx-auto my-auto mt-0 mb-0 text-center bg-[#000000cc] text-white h-full">
+    <div className="mx-auto my-auto mt-0 mb-0 text-center bg-[#000000cc] text-white h-dvh overflow-y-scroll">
       <Preview currentModel={currentModel} setCurrentModel={setCurrentModel} />
       <h1 className="pb-2.5 text-lg font-bold">Scale Models Collection</h1>
       <Origins

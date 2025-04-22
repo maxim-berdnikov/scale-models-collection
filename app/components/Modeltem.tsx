@@ -1,7 +1,8 @@
 import type { Model } from "./types";
 import Stub from "../assets/stub.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "classnames";
+import { useMobileCheck } from "~/hooks/useMobileCheck";
 
 type ModeltemProps = {
   model: Model;
@@ -17,7 +18,17 @@ export const Modeltem: React.FC<ModeltemProps> = ({
   handleModelClick,
   index,
 }) => {
-  const [visible, setVisible] = useState(!model.image);
+  const [visible, setVisible] = useState(false);
+
+  const isMobile = useMobileCheck();
+
+  useEffect(() => {
+    if (isMobile) {
+      setVisible(true);
+    } else {
+      setVisible(!model.image);
+    }
+  }, [isMobile, model.image]);
 
   if (!model.title) {
     return null;
@@ -36,15 +47,27 @@ export const Modeltem: React.FC<ModeltemProps> = ({
       }}
       onClick={(event) => handleModelClick(event, model.image)}
       role="button"
-      onMouseEnter={() => setVisible(true)}
-      onMouseLeave={() => setVisible(false)}
+      onMouseEnter={() => {
+        if (!isMobile) {
+          setVisible(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (!isMobile) {
+          setVisible(false);
+        }
+      }}
       onTouchStart={(event) => {
-        event.stopPropagation();
-        setVisible(true);
+        if (!isMobile) {
+          event.stopPropagation();
+          setVisible(true);
+        }
       }}
       onTouchEnd={(event) => {
-        event.stopPropagation();
-        setVisible(false);
+        if (!isMobile) {
+          event.stopPropagation();
+          setVisible(false);
+        }
       }}
     >
       <p

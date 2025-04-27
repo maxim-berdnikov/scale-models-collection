@@ -114,7 +114,7 @@ export const MainPage = () => {
         }}
         className="input"
       />
-      <div className={"models"}>
+      <div className={"models pb-14"}>
         {garage.map((model, index) => (
           <Modeltem
             key={`${model.series || ""}-${model.title}`}
